@@ -1,9 +1,13 @@
 -
 - **AIM**  - to add all PWC papers to researchlit... and make discoverable
 - ### Requirements
-	- Store only paper information available in the pwc feed (title, arxiv_id, abstract etc)
+	- Process a json file that has an array of entries, an example shown below in the section 'paper-abstract-feed'
 	- Improve the paper matching for existing papers code. Match should be based on arxiv_id, title, doi or any other relevant matching details
 	- Change the paper details page to only display abstract if that is all that is available.
+- ### Mappings
+	- arxiv_id -> papers.arxiv_id
+	- title -> papers.title
+	-
 - ### Examples
 	- **paper-abstract-feed**
 		- ```
