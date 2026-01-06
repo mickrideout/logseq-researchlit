@@ -7,7 +7,11 @@
 - ### Mappings
 	- arxiv_id -> papers.arxiv_id
 	- title -> papers.title
-	-
+	- abstract ->
+	- urls_abs -> papers.url
+	- tasks ->
+	- date -> papers.year
+	- authors -> papers.authors
 - ### Examples
 	- **paper-abstract-feed**
 		- ```
