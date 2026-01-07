@@ -5,7 +5,7 @@
 	- Modify the scripts/import_pwc_papers.py script
 	- Change the --json-file arg to be --abstracts-file
 	- Add a new arg '--links-file'
-	-
+	- The links file is a json file, an example json given below in the 'Dataset Example' section. Load this file into a d
 - ### Dataset Example
 	- ```json
 	  [
