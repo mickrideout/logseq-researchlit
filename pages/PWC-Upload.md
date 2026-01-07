@@ -2,15 +2,15 @@
 - **AIM**  - to add all PWC papers to researchlit... and make discoverable
 - ### Requirements
 	- Process a json file that has an array of entries, an example shown below in the section 'paper-abstract-feed'
-	- In the 'mappings' section below, the first item is the key in the json file, and the second item after the '->' is the destination in the database.
+	- In the 'mappings' section below, the first item is the key in the json file, and the second item after the '->' is the destination in the database. For database tables that are json fields, create a json entry if one doesnt exist, otherwise, merge the json with the new entry. Replace the token 'INSERT DATA HERE>' with the value from the
 	- Improve the paper matching for existing papers code. Match should be based on arxiv_id, title, doi or any other relevant matching details
 	- Change the paper details page to only display abstract if that is all that is available.
 - ### Mappings
 	- arxiv_id -> papers.arxiv_id
-	- title -> papers.title
-	- abstract -> papers.text_extraction - {'abstract'}
+	- title -> papers.title and also papers.text_extraction -> {'title': '<INSERT DATA HERE>'}
+	- abstract -> papers.text_extraction -> {'abstract': '<INSERT DATA HERE>'}
 	- urls_abs -> papers.url
-	- tasks ->
+	- tasks -> papers.attributes -> {'extractions': 'tasks': [<INSERT DATA HERE>]}
 	- date -> papers.year
 	- authors -> papers.authors
 - ### Examples
