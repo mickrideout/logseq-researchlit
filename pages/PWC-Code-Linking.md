@@ -6,7 +6,7 @@
 	- Change the --json-file arg to be --abstracts-file
 	- Add a new arg '--links-file'
 	- The links file is a json file, an example json given below in the 'Dataset Example' section. Load this file into memory as a python dictionary with the key being 'paper_url' and the value being 'repo_url'
-	-
+	- When iterating over the abstracts file, if the 'paper_url' in the abstracts file matches the
 - ### Dataset Example
 	- ```json
 	  [
