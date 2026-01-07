@@ -1,5 +1,6 @@
 -
 - **AIM**  - to add all PWC papers to researchlit
+- **PWC Feed Name** - papers-with-abstracts.json https://huggingface.co/datasets/pwc-archive/papers-with-abstracts
 - ### Requirements
 	- Create a script that processes a json file that has an array of entries, an example shown below in the section 'paper-abstract-feed'
 	- In the 'mappings' section below, the first item is the key in the json file, and the second item after the '->' is the destination in the database. For database tables that are json fields, create a json entry if one doesnt exist, otherwise, merge the json with the new entry. Replace the token 'INSERT DATA HERE>' with the value from the json file
