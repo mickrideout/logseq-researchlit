@@ -3,6 +3,9 @@
 - **Dataset** - links-between-papers-and-code.json - https://huggingface.co/datasets/pwc-archive/links-between-paper-and-code
 - ### Requirements
 	- Modify the scripts/import_pwc_papers.py script
+	- Change the --json-file arg to be --abstracts-file
+	- Add a new arg '--links-file'
+	-
 - ### Dataset Example
 	- ```json
 	  [
