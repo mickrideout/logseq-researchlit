@@ -8,7 +8,7 @@
 - ### Mappings
 	- arxiv_id -> papers.arxiv_id
 	- title -> papers.title
-	- abstract ->
+	- abstract -> papers.text_extraction - {'abstract'}
 	- urls_abs -> papers.url
 	- tasks ->
 	- date -> papers.year
