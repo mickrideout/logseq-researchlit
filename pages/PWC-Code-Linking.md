@@ -8,7 +8,7 @@
 	- The links file is a json file, an example json given below in the 'Dataset Example' section. Load this file into memory as a python dictionary called links_dict with the key being 'paper_url' and the value being 'repo_url'
 	- When iterating over the abstracts file, if the 'paper_url' in the abstracts file exists as a key in the in memory links_dict, then perform the following mappings:
 		- papers.attributes['extractions']['code_repository_found'] = true
-		- papers.attributes['extractions']['']
+		- papers.attributes['extractions']['code_repository'] = links_dict.value
 - ### Dataset Example
 	- ```json
 	  [
