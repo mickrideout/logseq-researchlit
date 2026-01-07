@@ -5,8 +5,8 @@
 	- Modify the scripts/import_pwc_papers.py script
 	- Change the --json-file arg to be --abstracts-file
 	- Add a new arg '--links-file'
-	- The links file is a json file, an example json given below in the 'Dataset Example' section. Load this file into memory as a python dictionary with the key being 'paper_url' and the value being 'repo_url'
-	- When iterating over the abstracts file, if the 'paper_url' in the abstracts file exists as a key in the in memory links dictionary, then add the links dictionary value to the database table (merge the json if need be) papers.
+	- The links file is a json file, an example json given below in the 'Dataset Example' section. Load this file into memory as a python dictionary called link with the key being 'paper_url' and the value being 'repo_url'
+	- When iterating over the abstracts file, if the 'paper_url' in the abstracts file exists as a key in the in memory links dictionary, then add the links dictionary value to the database table (merge the json if need
 - ### Dataset Example
 	- ```json
 	  [
