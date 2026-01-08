@@ -1,10 +1,68 @@
 -
 - **AIM** - to create SOTA boards based on PWC data
 - **Datasets** - https://huggingface.co/pwc-archive
-	- datasets.json (example )
+	- datasets.json
+	-
 - ## Data Examples
 	- ### Datasets Examples
 		- ```json
+		  [  
+		    {
+		      "url": "https://paperswithcode.com/dataset/jft-300m",
+		      "name": "JFT-300M",
+		      "full_name": "JFT-300M",
+		      "homepage": "",
+		      "description": "**JFT-300M** is an internal Google dataset used for training image classification models. Images are labeled using an algorithm that uses complex mixture of raw web signals, connections between web-pages and user feedback. This results in over one billion labels for the 300M images (a single image can have multiple labels). Of the billion image labels, approximately 375M are selected via an algorithm that aims to maximize label precision of selected images.",
+		      "short_description": "JFT-300M is an internal Google dataset used for training image classification models. Images are labeled using an algorithm that uses complex mixture of raw web signals, connections between web-pages and user feedback. This results in over one billion labels for the 300M images (a single image can have multiple labels). Of the billion image labels, approximately 375M are selected via an algorithm that aims to maximize label precision of selected images.",
+		      "parent_dataset": null,
+		      "image": "https://production-media.paperswithcode.com/datasets/Screen_Shot_2021-02-14_at_5.06.38_PM.png",
+		      "audio": null,
+		      "thumbnail": "https://production-media.paperswithcode.com/thumbnails/dataset/dataset-0000000003-b4e2f013_DyJWymg.jpg",
+		      "default_image": null,
+		      "verified_image": "https://production-media.paperswithcode.com/thumbnails/dataset-small/dataset-0000000003-4b92f30e.jpg",
+		      "default_youtube_link": null,
+		      "paper": {
+		        "title": "Revisiting Unreasonable Effectiveness of Data in Deep Learning Era",
+		        "url": "https://paperswithcode.com/paper/revisiting-unreasonable-effectiveness-of-data"
+		      },
+		      "mention_count": 0,
+		      "introduced_date": "2017-07-10",
+		      "license_name": "Private (not publicly available)",
+		      "license_url": null,
+		      "verified_name": "JFT-300M",
+		      "verified_paper": {
+		        "title": "Revisiting Unreasonable Effectiveness of Data in Deep Learning Era",
+		        "url": "https://paperswithcode.com/paper/revisiting-unreasonable-effectiveness-of-data"
+		      },
+		      "warning": null,
+		      "modalities": [
+		        "Images"
+		      ],
+		      "tasks": [
+		        {
+		          "task": "Image Classification",
+		          "url": "https://paperswithcode.com/task/image-classification"
+		        }
+		      ],
+		      "languages": [
+		        "Chinese"
+		      ],
+		      "variants": [
+		        "JFT-300M"
+		      ],
+		      "num_papers": 123,
+		      "data_loaders": [
+		        {
+		          "url": "https://github.com/tensorflow/models",
+		          "repo": "https://github.com/tensorflow/models",
+		          "frameworks": [
+		            "tf",
+		            "pytorch"
+		          ]
+		        }
+		      ]
+		    },
+		  ]
 		  ```
 - ### AI Review
 	- ### Claude Review
