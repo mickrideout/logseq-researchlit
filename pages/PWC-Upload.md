@@ -14,6 +14,7 @@
 	- tasks -> papers.attributes -> {'extractions': 'tasks': [<INSERT DATA HERE>]}
 	- date -> papers.year
 	- authors -> papers.authors
+	- paper_url -> papers.attributes['paper']
 - ### Examples
 	- **paper-abstract-feed**
 		- ```
