@@ -270,37 +270,37 @@
 			- Default timeout: 30 seconds per API call
 	- ### 8. Performance Considerations
 		- #### 8.1 Async Processing
-		- Use async/await for:
-			- ArXiv API calls
-			- Repository search operations
-			- Database operations
-		- Process papers concurrently where possible (with rate limiting)
+			- Use async/await for:
+				- ArXiv API calls
+				- Repository search operations
+				- Database operations
+			- Process papers concurrently where possible (with rate limiting)
 		- #### 8.2 Rate Limiting
-		- ArXiv API: 3 requests per second max
-		- Google Custom Search: Respect existing service rate limits
-		- GitHub API: Respect existing service rate limits
-		- Add delays between API calls to avoid rate limits
+			- ArXiv API: 3 requests per second max
+			- Google Custom Search: Respect existing service rate limits
+			- GitHub API: Respect existing service rate limits
+			- Add delays between API calls to avoid rate limits
 		- #### 8.3 Batching
-		- Process papers in batches for memory efficiency
-		- Commit database transactions in batches
-		- Stream large arXiv result sets if needed
-		- ### 9. Testing and Validation
+			- Process papers in batches for memory efficiency
+			- Commit database transactions in batches
+			- Stream large arXiv result sets if needed
+	- ### 9. Testing and Validation
 		- #### 9.1 Unit Tests
-		- Test arXiv API date query formatting
-		- Test XML parsing of arXiv responses
-		- Test duplicate detection logic
-		- Test repository storage format
+			- Test arXiv API date query formatting
+			- Test XML parsing of arXiv responses
+			- Test duplicate detection logic
+			- Test repository storage format
 		- #### 9.2 Integration Tests
-		- Test end-to-end flow with small date range
-		- Test error handling and recovery
-		- Test batch processing
-		- Test statistics reporting
+			- Test end-to-end flow with small date range
+			- Test error handling and recovery
+			- Test batch processing
+			- Test statistics reporting
 		- #### 9.3 Validation
-		- Validate date formats
-		- Validate arXiv ID formats
-		- Validate repository URLs before storage
-		- Verify database schema compatibility
-		- ### 10. Future Enhancements (Out of Scope but Noted)
+			- Validate date formats
+			- Validate arXiv ID formats
+			- Validate repository URLs before storage
+			- Verify database schema compatibility
+	- ### 10. Future Enhancements (Out of Scope but Noted)
 		- Parallel processing of repository searches (with rate limiting)
 		- Caching of repository search results
 		- Support for arXiv categories filtering
