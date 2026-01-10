@@ -225,29 +225,29 @@
 			- Continue processing remaining papers
 	- ### 6. Logging and Reporting
 		- #### 6.1 Progress Logging
-		- Log each paper processed with status:
-			- `Fetched`: Retrieved from arXiv
-			- `Created`: New paper created
-			- `Skipped`: Duplicate found
-			- `Updated`: Existing paper updated with repo
-			- `Error`: Processing failed
-		- Progress indicators: `[X/Total]` format
-		- Batch commit notifications
+			- Log each paper processed with status:
+				- `Fetched`: Retrieved from arXiv
+				- `Created`: New paper created
+				- `Skipped`: Duplicate found
+				- `Updated`: Existing paper updated with repo
+				- `Error`: Processing failed
+			- Progress indicators: `[X/Total]` format
+			- Batch commit notifications
 		- #### 6.2 Final Statistics
-		- Total papers fetched from arXiv
-		- Papers created
-		- Papers skipped (duplicates)
-		- Papers updated
-		- Repository searches performed
-		- Repositories found
-		- Errors encountered
-		- Processing time
+			- Total papers fetched from arXiv
+			- Papers created
+			- Papers skipped (duplicates)
+			- Papers updated
+			- Repository searches performed
+			- Repositories found
+			- Errors encountered
+			- Processing time
 		- #### 6.3 Log Levels
-		- `INFO`: General progress and statistics
-		- `DEBUG`: Detailed API calls and responses
-		- `WARNING`: Non-fatal errors (continue processing)
-		- `ERROR`: Fatal errors (may stop processing)
-		- ### 7. Configuration and Dependencies
+			- `INFO`: General progress and statistics
+			- `DEBUG`: Detailed API calls and responses
+			- `WARNING`: Non-fatal errors (continue processing)
+			- `ERROR`: Fatal errors (may stop processing)
+	- ### 7. Configuration and Dependencies
 		- #### 7.1 Environment Variables
 		- Reuse existing environment variables:
 			- `WEB_SEARCH_API_KEY`: Google Custom Search API key
