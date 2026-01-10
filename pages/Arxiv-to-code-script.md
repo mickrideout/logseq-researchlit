@@ -57,61 +57,61 @@
 						- Repository validation (size, language, README paper mention)
 						- Confidence scoring
 						- Metadata extraction (stars, forks, language, topics, etc.)
-	- #### 2.2 Repository Search Strategy
-	- For each paper:
-	  
-	  1. Search for repositories using paper title
-	  
-	  2. Validate repositories (filter by relevance, size, language)
-	  
-	  3. Store repository metadata if found (top repository or top N repositories)
-	  
-	  4. Store repository URL(s) in paper attributes
-	- #### 2.3 Repository Storage Format
-	- **Requirement**: Store repository information in paper `attributes` field
-	- **Structure**:
-	  
-	  ```json
-	  
-	  {
-	  
-	    "extractions": {
-	  
-	      "code_repository": "https://github.com/owner/repo",
-	  
-	      "code_repository_found": true,
-	  
-	      "code_repository_stars": 1234,
-	  
-	      "code_repository_metadata": {
-	  
-	        "owner": "owner",
-	  
-	        "name": "repo",
-	  
-	        "full_name": "owner/repo",
-	  
-	        "url": "https://github.com/owner/repo",
-	  
-	        "description": "...",
-	  
-	        "stars": 1234,
-	  
-	        "forks": 56,
-	  
-	        "language": "Python",
-	  
-	        "topics": ["machine-learning", "pytorch"],
-	  
-	        "confidence_score": 0.95
-	  
-	      }
-	  
-	    }
-	  
-	  }
-	  
-	  ```
+				- #### 2.2 Repository Search Strategy
+					- For each paper:
+					  
+					  1. Search for repositories using paper title
+					  
+					  2. Validate repositories (filter by relevance, size, language)
+					  
+					  3. Store repository metadata if found (top repository or top N repositories)
+					  
+					  4. Store the top scoring repository URL in paper attributes
+				- #### 2.3 Repository Storage Format
+					- **Requirement**: Store repository information in paper `attributes` field
+						- **Structure**:
+						  
+						  ```json
+						  
+						  {
+						  
+						    "extractions": {
+						  
+						      "code_repository": "https://github.com/owner/repo",
+						  
+						      "code_repository_found": true,
+						  
+						      "code_repository_stars": 1234,
+						  
+						      "code_repository_metadata": {
+						  
+						        "owner": "owner",
+						  
+						        "name": "repo",
+						  
+						        "full_name": "owner/repo",
+						  
+						        "url": "https://github.com/owner/repo",
+						  
+						        "description": "...",
+						  
+						        "stars": 1234,
+						  
+						        "forks": 56,
+						  
+						        "language": "Python",
+						  
+						        "topics": ["machine-learning", "pytorch"],
+						  
+						        "confidence_score": 0.95
+						  
+						      }
+						  
+						    }
+						  
+						  }
+						  
+						  ```
 	- If multiple repositories found, store top repository (highest confidence score, then stars)
 	- Option: Store multiple repositories as array if needed
 	- ### 3. Paper Creation and Database Storage
