@@ -112,24 +112,23 @@
 						  }
 						  
 						  ```
-	- If multiple repositories found, store top repository (highest confidence score, then stars)
-	- Option: Store multiple repositories as array if needed
-	- ### 3. Paper Creation and Database Storage
-	- #### 3.1 Paper Creation
-	- **Requirement**: Create papers using existing `PaperService`
-	- **Method**: Create new method `create_paper_from_arxiv_data()` similar to `create_paper_from_pwc_data()`
-	- **Location**: `apps/api/app/services/paper_service.py`
-	- **Details**:
-		- Accept arXiv API response data
-		- Create `Paper` instance with:
-			- `title`: from arXiv entry
-			- `authors`: list of author names
-			- `year`: extracted from published_date
-			- `arxiv_id`: cleaned arXiv ID (remove version suffix if storing base ID)
-			- `url`: arXiv paper URL
-			- `status`: `ProcessingStatus.DONE` (since we only have metadata)
-			- `text_extraction`: `{"title": title, "abstract": abstract}`
-			- `attributes`: repository information if found
+					- If multiple repositories found, store top repository only
+		- ### 3. Paper Creation and Database Storage
+			- #### 3.1 Paper Creation
+				- **Requirement**: Create papers using existing `PaperService`
+				- **Method**: Create new method `create_paper_from_arxiv_data()` similar to `create_paper_from_pwc_data()`
+				- **Location**: `apps/api/app/services/paper_service.py`
+				- **Details**:
+					- Accept arXiv API response data
+					- Create `Paper` instance with:
+						- `title`: from arXiv entry
+						- `authors`: list of author names
+						- `year`: extracted from published_date
+						- `arxiv_id`: cleaned arXiv ID (remove version suffix if storing base ID)
+						- `url`: arXiv paper URL
+						- `status`: `ProcessingStatus.DONE` (since we only have metadata)
+						- `text_extraction`: `{"title": title, "abstract": abstract}`
+						- `attributes`: repository information if found
 	- #### 3.2 Duplicate Detection
 	- **Requirement**: Check for existing papers before creating
 	- **Strategy**: 
