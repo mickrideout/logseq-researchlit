@@ -141,39 +141,39 @@
 						- Skip creation OR
 						- Update existing paper with repository info if not already present
 						- Log duplicate detection
-	- #### 3.3 Batch Processing
-	- **Requirement**: Process papers in batches for efficiency
-	- **Details**:
-		- Commit database transactions in batches (e.g., every 50-100 papers)
-		- Handle errors gracefully (log and continue)
-		- Track statistics: created, updated, skipped, errors
-	- ### 4. Script Interface and Execution
-	- #### 4.1 Command-Line Arguments
-	- **Single Date**:
-	  
-	  ```bash
-	  
-	  python scripts/arxiv_paper_repo_search.py --date 2024-01-15 --env dev
-	  
-	  ```
-	- **Date Range**:
-	  
-	  ```bash
-	  
-	  python scripts/arxiv_paper_repo_search.py --start-date 2024-01-01 --end-date 2024-01-31 --env dev
-	  
-	  ```
-	- **Month**:
-	  
-	  ```bash
-	  
-	  python scripts/arxiv_paper_repo_search.py --month 2024-01 --env dev
-	  
-	  # OR
-	  
-	  python scripts/arxiv_paper_repo_search.py --month 202401 --env dev
-	  
-	  ```
+				- #### 3.3 Batch Processing
+					- **Requirement**: Process papers in batches for efficiency
+					- **Details**:
+						- Commit database transactions in batches (e.g., every 50-100 papers)
+						- Handle errors gracefully (log and continue)
+						- Track statistics: created, updated, skipped, errors
+		- ### 4. Script Interface and Execution
+			- #### 4.1 Command-Line Arguments
+				- **Single Date**:
+				  
+				  ```bash
+				  
+				  python scripts/arxiv_paper_repo_search.py --date 2024-01-15 --env dev
+				  
+				  ```
+				- **Date Range**:
+				  
+				  ```bash
+				  
+				  python scripts/arxiv_paper_repo_search.py --start-date 2024-01-01 --end-date 2024-01-31 --env dev
+				  
+				  ```
+				- **Month**:
+				  
+				  ```bash
+				  
+				  python scripts/arxiv_paper_repo_search.py --month 2024-01 --env dev
+				  
+				  # OR
+				  
+				  python scripts/arxiv_paper_repo_search.py --month 202401 --env dev
+				  
+				  ```
 	- #### 4.2 Optional Arguments
 	- `--env` (required): Environment (`dev` or `prod`)
 	- `--dry-run`: Preview what would be processed without database writes
