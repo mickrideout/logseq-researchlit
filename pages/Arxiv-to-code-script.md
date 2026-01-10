@@ -45,74 +45,74 @@
 					- Rate limiting handling (3 requests per second recommended)
 					- Retry logic with exponential backoff
 					- Error handling for API failures
-		- ### 2. Code Repository Search
-			- #### 2.1 Reuse Existing Code Repository Search Service
-				- **Requirement**: Integrate with existing `CodeRepositorySearchService`
-				- **Location**: `apps/api/app/services/code_repository_search.py`
-				- **Details**:
-					- Use `CodeRepositorySearchService.search_and_validate_repositories(paper_title)`
-					- Returns list of validated `RepositoryMetadata` objects
-					- Already includes:
-						- GitHub repository search via Google Custom Search
-						- Repository validation (size, language, README paper mention)
-						- Confidence scoring
-						- Metadata extraction (stars, forks, language, topics, etc.)
-				- #### 2.2 Repository Search Strategy
-					- For each paper:
+	- ### 2. Code Repository Search
+		- #### 2.1 Reuse Existing Code Repository Search Service
+			- **Requirement**: Integrate with existing `CodeRepositorySearchService`
+			- **Location**: `apps/api/app/services/code_repository_search.py`
+			- **Details**:
+				- Use `CodeRepositorySearchService.search_and_validate_repositories(paper_title)`
+				- Returns list of validated `RepositoryMetadata` objects
+				- Already includes:
+					- GitHub repository search via Google Custom Search
+					- Repository validation (size, language, README paper mention)
+					- Confidence scoring
+					- Metadata extraction (stars, forks, language, topics, etc.)
+			- #### 2.2 Repository Search Strategy
+				- For each paper:
+				  
+				  1. Search for repositories using paper title
+				  
+				  2. Validate repositories (filter by relevance, size, language)
+				  
+				  3. Store repository metadata if found (top repository or top N repositories)
+				  
+				  4. Store the top scoring repository URL in paper attributes
+			- #### 2.3 Repository Storage Format
+				- **Requirement**: Store repository information in paper `attributes` field
+					- **Structure**:
 					  
-					  1. Search for repositories using paper title
+					  ```json
 					  
-					  2. Validate repositories (filter by relevance, size, language)
+					  {
 					  
-					  3. Store repository metadata if found (top repository or top N repositories)
+					    "extractions": {
 					  
-					  4. Store the top scoring repository URL in paper attributes
-				- #### 2.3 Repository Storage Format
-					- **Requirement**: Store repository information in paper `attributes` field
-						- **Structure**:
-						  
-						  ```json
-						  
-						  {
-						  
-						    "extractions": {
-						  
-						      "code_repository": "https://github.com/owner/repo",
-						  
-						      "code_repository_found": true,
-						  
-						      "code_repository_stars": 1234,
-						  
-						      "code_repository_metadata": {
-						  
-						        "owner": "owner",
-						  
-						        "name": "repo",
-						  
-						        "full_name": "owner/repo",
-						  
-						        "url": "https://github.com/owner/repo",
-						  
-						        "description": "...",
-						  
-						        "stars": 1234,
-						  
-						        "forks": 56,
-						  
-						        "language": "Python",
-						  
-						        "topics": ["machine-learning", "pytorch"],
-						  
-						        "confidence_score": 0.95
-						  
-						      }
-						  
-						    }
-						  
-						  }
-						  
-						  ```
-					- If multiple repositories found, store top repository only
+					      "code_repository": "https://github.com/owner/repo",
+					  
+					      "code_repository_found": true,
+					  
+					      "code_repository_stars": 1234,
+					  
+					      "code_repository_metadata": {
+					  
+					        "owner": "owner",
+					  
+					        "name": "repo",
+					  
+					        "full_name": "owner/repo",
+					  
+					        "url": "https://github.com/owner/repo",
+					  
+					        "description": "...",
+					  
+					        "stars": 1234,
+					  
+					        "forks": 56,
+					  
+					        "language": "Python",
+					  
+					        "topics": ["machine-learning", "pytorch"],
+					  
+					        "confidence_score": 0.95
+					  
+					      }
+					  
+					    }
+					  
+					  }
+					  
+					  ```
+				- If multiple repositories found, store top repository only
 		- ### 3. Paper Creation and Database Storage
 			- #### 3.1 Paper Creation
 				- **Requirement**: Create papers using existing `PaperService`
@@ -207,24 +207,24 @@
 						  
 						  7. Statistics reporting
 		- ### 5. Error Handling and Resilience
-	- #### 5.1 ArXiv API Errors
-	- Handle rate limiting (429 errors)
-	- Implement exponential backoff retry
-	- Handle malformed XML responses
-	- Log API failures and continue with next paper
-	- Track API call failures in statistics
-	- #### 5.2 Repository Search Errors
-	- Handle API failures (Google Custom Search, GitHub API)
-	- Continue processing if repository search fails for a paper
-	- Log errors but don't fail entire script
-	- Track repository search failures
-	- #### 5.3 Database Errors
-	- Handle duplicate key errors gracefully
-	- Rollback batch on critical errors
-	- Log database errors with context
-	- Continue processing remaining papers
+			- #### 5.1 ArXiv API Errors
+				- Handle rate limiting (429 errors)
+				- Implement exponential backoff retry
+				- Handle malformed XML responses
+				- Log API failures and continue with next paper
+				- Track API call failures in statistics
+			- #### 5.2 Repository Search Errors
+				- Handle API failures (Google Custom Search, GitHub API)
+				- Continue processing if repository search fails for a paper
+				- Log errors but don't fail entire script
+				- Track repository search failures
+			- #### 5.3 Database Errors
+				- Handle duplicate key errors gracefully
+				- Rollback batch on critical errors
+				- Log database errors with context
+				- Continue processing remaining papers
 	- ### 6. Logging and Reporting
-	- #### 6.1 Progress Logging
+		- #### 6.1 Progress Logging
 	- Log each paper processed with status:
 		- `Fetched`: Retrieved from arXiv
 		- `Created`: New paper created
