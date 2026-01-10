@@ -45,18 +45,18 @@
 					- Rate limiting handling (3 requests per second recommended)
 					- Retry logic with exponential backoff
 					- Error handling for API failures
-	- ### 2. Code Repository Search
-	- #### 2.1 Reuse Existing Code Repository Search Service
-	- **Requirement**: Integrate with existing `CodeRepositorySearchService`
-	- **Location**: `apps/api/app/services/code_repository_search.py`
-	- **Details**:
-		- Use `CodeRepositorySearchService.search_and_validate_repositories(paper_title)`
-		- Returns list of validated `RepositoryMetadata` objects
-		- Already includes:
-			- GitHub repository search via Google Custom Search
-			- Repository validation (size, language, README paper mention)
-			- Confidence scoring
-			- Metadata extraction (stars, forks, language, topics, etc.)
+		- ### 2. Code Repository Search
+			- #### 2.1 Reuse Existing Code Repository Search Service
+				- **Requirement**: Integrate with existing `CodeRepositorySearchService`
+				- **Location**: `apps/api/app/services/code_repository_search.py`
+				- **Details**:
+					- Use `CodeRepositorySearchService.search_and_validate_repositories(paper_title)`
+					- Returns list of validated `RepositoryMetadata` objects
+					- Already includes:
+						- GitHub repository search via Google Custom Search
+						- Repository validation (size, language, README paper mention)
+						- Confidence scoring
+						- Metadata extraction (stars, forks, language, topics, etc.)
 	- #### 2.2 Repository Search Strategy
 	- For each paper:
 	  
