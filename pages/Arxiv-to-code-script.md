@@ -21,20 +21,20 @@
 					- `url` (arXiv paper URL)
 				- Handle API rate limiting and retries
 				- Handle pagination for large result sets (arXiv API returns max 2000 results per query)
-			- #### 1.2 Date Query Options
-				- **Single Date**:
-					- Format: `YYYY-MM-DD`
-					- Retrieve all papers published on that specific date
-					- Query parameter: `submittedDate:[YYYYMMDD TO YYYYMMDD]`
-				- **Date Range**:
-					- Format: `YYYY-MM-DD` to `YYYY-MM-DD`
-					- Retrieve all papers published within the range (inclusive)
-					- Query parameter: `submittedDate:[YYYYMMDD TO YYYYMMDD]`
-				- **Month**:
-					- Format: `YYYY-MM` or `YYYYMM`
-					- Retrieve all papers published in that month
-					- Automatically calculate first and last day of month
-					- Query parameter: `submittedDate:[YYYYMM01 TO YYYYMMDD]`
+		- #### 1.2 Date Query Options
+			- **Single Date**:
+				- Format: `YYYY-MM-DD`
+				- Retrieve all papers published on that specific date
+				- Query parameter: `submittedDate:[YYYYMMDD TO YYYYMMDD]`
+			- **Date Range**:
+				- Format: `YYYY-MM-DD` to `YYYY-MM-DD`
+				- Retrieve all papers published within the range (inclusive)
+				- Query parameter: `submittedDate:[YYYYMMDD TO YYYYMMDD]`
+			- **Month**:
+				- Format: `YYYY-MM` or `YYYYMM`
+				- Retrieve all papers published in that month
+				- Automatically calculate first and last day of month
+				- Query parameter: `submittedDate:[YYYYMM01 TO YYYYMMDD]`
 			- #### 1.3 ArXiv API Service/Module
 				- **Requirement**: Create reusable arXiv API service module
 				- **Location**: `apps/api/app/services/arxiv_service.py`
