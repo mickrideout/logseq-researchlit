@@ -129,18 +129,18 @@
 						- `status`: `ProcessingStatus.DONE` (since we only have metadata)
 						- `text_extraction`: `{"title": title, "abstract": abstract}`
 						- `attributes`: repository information if found
-			- #### 3.2 Duplicate Detection
-	- **Requirement**: Check for existing papers before creating
-	- **Strategy**: 
-	  
-	  1. Check by `arxiv_id` (exact match)
-	  
-	  2. If not found, check by title similarity (fuzzy match)
-	  
-	  3. If duplicate found:
-		- Skip creation OR
-		- Update existing paper with repository info if not already present
-		- Log duplicate detection
+				- #### 3.2 Duplicate Detection
+					- **Requirement**: Check for existing papers before creating
+					- **Strategy**: 
+					  
+					  1. Check by `arxiv_id` (exact match)
+					  
+					  2. If not found, check by title similarity (fuzzy match)
+					  
+					  3. If duplicate found:
+						- Skip creation OR
+						- Update existing paper with repository info if not already present
+						- Log duplicate detection
 	- #### 3.3 Batch Processing
 	- **Requirement**: Process papers in batches for efficiency
 	- **Details**:
