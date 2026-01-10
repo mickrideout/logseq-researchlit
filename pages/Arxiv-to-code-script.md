@@ -129,7 +129,7 @@
 						- `status`: `ProcessingStatus.DONE` (since we only have metadata)
 						- `text_extraction`: `{"title": title, "abstract": abstract}`
 						- `attributes`: repository information if found
-	- #### 3.2 Duplicate Detection
+			- #### 3.2 Duplicate Detection
 	- **Requirement**: Check for existing papers before creating
 	- **Strategy**: 
 	  
