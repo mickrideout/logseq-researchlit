@@ -35,16 +35,16 @@
 				- Retrieve all papers published in that month
 				- Automatically calculate first and last day of month
 				- Query parameter: `submittedDate:[YYYYMM01 TO YYYYMMDD]`
-			- #### 1.3 ArXiv API Service/Module
-				- **Requirement**: Create reusable arXiv API service module
-				- **Location**: `apps/api/app/services/arxiv_service.py`
-				- **Features**:
-					- Async HTTP client for arXiv API calls
-					- XML parsing (Atom feed format)
-					- Date range formatting and validation
-					- Rate limiting handling (3 requests per second recommended)
-					- Retry logic with exponential backoff
-					- Error handling for API failures
+		- #### 1.3 ArXiv API Service/Module
+			- **Requirement**: Create reusable arXiv API service module
+			- **Location**: `apps/api/app/services/arxiv_service.py`
+			- **Features**:
+				- Async HTTP client for arXiv API calls
+				- XML parsing (Atom feed format)
+				- Date range formatting and validation
+				- Rate limiting handling (3 requests per second recommended)
+				- Retry logic with exponential backoff
+				- Error handling for API failures
 	- ### 2. Code Repository Search
 		- #### 2.1 Reuse Existing Code Repository Search Service
 			- **Requirement**: Integrate with existing `CodeRepositorySearchService`
@@ -113,116 +113,116 @@
 					  
 					  ```
 				- If multiple repositories found, store top repository only
-		- ### 3. Paper Creation and Database Storage
-			- #### 3.1 Paper Creation
-				- **Requirement**: Create papers using existing `PaperService`
-				- **Method**: Create new method `create_paper_from_arxiv_data()` similar to `create_paper_from_pwc_data()`
-				- **Location**: `apps/api/app/services/paper_service.py`
+	- ### 3. Paper Creation and Database Storage
+		- #### 3.1 Paper Creation
+			- **Requirement**: Create papers using existing `PaperService`
+			- **Method**: Create new method `create_paper_from_arxiv_data()` similar to `create_paper_from_pwc_data()`
+			- **Location**: `apps/api/app/services/paper_service.py`
+			- **Details**:
+				- Accept arXiv API response data
+				- Create `Paper` instance with:
+					- `title`: from arXiv entry
+					- `authors`: list of author names
+					- `year`: extracted from published_date
+					- `arxiv_id`: cleaned arXiv ID (remove version suffix if storing base ID)
+					- `url`: arXiv paper URL
+					- `status`: `ProcessingStatus.DONE` (since we only have metadata)
+					- `text_extraction`: `{"title": title, "abstract": abstract}`
+					- `attributes`: repository information if found
+			- #### 3.2 Duplicate Detection
+				- **Requirement**: Check for existing papers before creating
+				- **Strategy**: 
+				  
+				  1. Check by `arxiv_id` (exact match)
+				  
+				  2. If not found, check by title similarity (fuzzy match)
+				  
+				  3. If duplicate found:
+					- Skip creation OR
+					- Update existing paper with repository info if not already present
+					- Log duplicate detection
+			- #### 3.3 Batch Processing
+				- **Requirement**: Process papers in batches for efficiency
 				- **Details**:
-					- Accept arXiv API response data
-					- Create `Paper` instance with:
-						- `title`: from arXiv entry
-						- `authors`: list of author names
-						- `year`: extracted from published_date
-						- `arxiv_id`: cleaned arXiv ID (remove version suffix if storing base ID)
-						- `url`: arXiv paper URL
-						- `status`: `ProcessingStatus.DONE` (since we only have metadata)
-						- `text_extraction`: `{"title": title, "abstract": abstract}`
-						- `attributes`: repository information if found
-				- #### 3.2 Duplicate Detection
-					- **Requirement**: Check for existing papers before creating
-					- **Strategy**: 
+					- Commit database transactions in batches (e.g., every 50-100 papers)
+					- Handle errors gracefully (log and continue)
+					- Track statistics: created, updated, skipped, errors
+	- ### 4. Script Interface and Execution
+		- #### 4.1 Command-Line Arguments
+			- **Single Date**:
+			  
+			  ```bash
+			  
+			  python scripts/arxiv_paper_repo_search.py --date 2024-01-15 --env dev
+			  
+			  ```
+			- **Date Range**:
+			  
+			  ```bash
+			  
+			  python scripts/arxiv_paper_repo_search.py --start-date 2024-01-01 --end-date 2024-01-31 --env dev
+			  
+			  ```
+			- **Month**:
+			  
+			  ```bash
+			  
+			  python scripts/arxiv_paper_repo_search.py --month 2024-01 --env dev
+			  
+			  # OR
+			  
+			  python scripts/arxiv_paper_repo_search.py --month 202401 --env dev
+			  
+			  ```
+			- #### 4.2 Other Argum!ents
+				- `--env` (required): Environment (`dev` or `prod`)
+				- `--dry-run`: Preview what would be processed without database writes
+				- `--skip-repo-search`: Only fetch papers, skip repository search
+				- `--limit`: Limit number of papers to process (useful for testing)
+				- `--batch-size`: Number of papers to commit per batch (default: 50)
+				- `--max-repos-per-paper`: Maximum repositories to store per paper (default: 1)
+				- `--verbose`: Enable verbose logging
+			- #### 4.3 Script Structure
+				- **Location**: `scripts/arxiv_paper_repo_search.py`
+				- **Pattern**: Follow existing script patterns (e.g., `import_pwc_paper_abstracts.py`)
+				- **Components**:
+				  
+				  1. Environment setup (load .env files)
+				  
+				  2. Database schema validation
+				  
+				  3. ArXiv API service initialization
+				  
+				  4. Code repository search service initialization
+				  
+				  5. Date range calculation
+				  
+				  6. Main processing loop:
+					- Fetch papers from arXiv
+					- For each paper:
+						- Check for duplicates
+						- Search for repositories (if enabled)
+						- Create/update paper in database
+					- Commit batches
 					  
-					  1. Check by `arxiv_id` (exact match)
-					  
-					  2. If not found, check by title similarity (fuzzy match)
-					  
-					  3. If duplicate found:
-						- Skip creation OR
-						- Update existing paper with repository info if not already present
-						- Log duplicate detection
-				- #### 3.3 Batch Processing
-					- **Requirement**: Process papers in batches for efficiency
-					- **Details**:
-						- Commit database transactions in batches (e.g., every 50-100 papers)
-						- Handle errors gracefully (log and continue)
-						- Track statistics: created, updated, skipped, errors
-		- ### 4. Script Interface and Execution
-			- #### 4.1 Command-Line Arguments
-				- **Single Date**:
-				  
-				  ```bash
-				  
-				  python scripts/arxiv_paper_repo_search.py --date 2024-01-15 --env dev
-				  
-				  ```
-				- **Date Range**:
-				  
-				  ```bash
-				  
-				  python scripts/arxiv_paper_repo_search.py --start-date 2024-01-01 --end-date 2024-01-31 --env dev
-				  
-				  ```
-				- **Month**:
-				  
-				  ```bash
-				  
-				  python scripts/arxiv_paper_repo_search.py --month 2024-01 --env dev
-				  
-				  # OR
-				  
-				  python scripts/arxiv_paper_repo_search.py --month 202401 --env dev
-				  
-				  ```
-				- #### 4.2 Other Argum!ents
-					- `--env` (required): Environment (`dev` or `prod`)
-					- `--dry-run`: Preview what would be processed without database writes
-					- `--skip-repo-search`: Only fetch papers, skip repository search
-					- `--limit`: Limit number of papers to process (useful for testing)
-					- `--batch-size`: Number of papers to commit per batch (default: 50)
-					- `--max-repos-per-paper`: Maximum repositories to store per paper (default: 1)
-					- `--verbose`: Enable verbose logging
-				- #### 4.3 Script Structure
-					- **Location**: `scripts/arxiv_paper_repo_search.py`
-					- **Pattern**: Follow existing script patterns (e.g., `import_pwc_paper_abstracts.py`)
-					- **Components**:
-					  
-					  1. Environment setup (load .env files)
-					  
-					  2. Database schema validation
-					  
-					  3. ArXiv API service initialization
-					  
-					  4. Code repository search service initialization
-					  
-					  5. Date range calculation
-					  
-					  6. Main processing loop:
-						- Fetch papers from arXiv
-						- For each paper:
-							- Check for duplicates
-							- Search for repositories (if enabled)
-							- Create/update paper in database
-						- Commit batches
-						  
-						  7. Statistics reporting
-		- ### 5. Error Handling and Resilience
-			- #### 5.1 ArXiv API Errors
-				- Handle rate limiting (429 errors)
-				- Implement exponential backoff retry
-				- Handle malformed XML responses
-				- Log API failures and continue with next paper
-				- Track API call failures in statistics
-			- #### 5.2 Repository Search Errors
-				- Handle API failures (Google Custom Search, GitHub API)
-				- Continue processing if repository search fails for a paper
-				- Log errors but don't fail entire script
-				- Track repository search failures
-			- #### 5.3 Database Errors
-				- Handle duplicate key errors gracefully
-				- Rollback batch on critical errors
-				- Log database errors with context
-				- Continue processing remaining papers
+					  7. Statistics reporting
+	- ### 5. Error Handling and Resilience
+		- #### 5.1 ArXiv API Errors
+			- Handle rate limiting (429 errors)
+			- Implement exponential backoff retry
+			- Handle malformed XML responses
+			- Log API failures and continue with next paper
+			- Track API call failures in statistics
+		- #### 5.2 Repository Search Errors
+			- Handle API failures (Google Custom Search, GitHub API)
+			- Continue processing if repository search fails for a paper
+			- Log errors but don't fail entire script
+			- Track repository search failures
+		- #### 5.3 Database Errors
+			- Handle duplicate key errors gracefully
+			- Rollback batch on critical errors
+			- Log database errors with context
+			- Continue processing remaining papers
 	- ### 6. Logging and Reporting
 		- #### 6.1 Progress Logging
 	- Log each paper processed with status:
