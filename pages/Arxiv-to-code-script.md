@@ -35,16 +35,16 @@
 					- Retrieve all papers published in that month
 					- Automatically calculate first and last day of month
 					- Query parameter: `submittedDate:[YYYYMM01 TO YYYYMMDD]`
-	- #### 1.3 ArXiv API Service/Module
-	- **Requirement**: Create reusable arXiv API service module
-	- **Location**: `apps/api/app/services/arxiv_service.py`
-	- **Features**:
-		- Async HTTP client for arXiv API calls
-		- XML parsing (Atom feed format)
-		- Date range formatting and validation
-		- Rate limiting handling (3 requests per second recommended)
-		- Retry logic with exponential backoff
-		- Error handling for API failures
+			- #### 1.3 ArXiv API Service/Module
+				- **Requirement**: Create reusable arXiv API service module
+				- **Location**: `apps/api/app/services/arxiv_service.py`
+				- **Features**:
+					- Async HTTP client for arXiv API calls
+					- XML parsing (Atom feed format)
+					- Date range formatting and validation
+					- Rate limiting handling (3 requests per second recommended)
+					- Retry logic with exponential backoff
+					- Error handling for API failures
 	- ### 2. Code Repository Search
 	- #### 2.1 Reuse Existing Code Repository Search Service
 	- **Requirement**: Integrate with existing `CodeRepositorySearchService`
