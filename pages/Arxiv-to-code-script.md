@@ -182,31 +182,31 @@
 					- `--batch-size`: Number of papers to commit per batch (default: 50)
 					- `--max-repos-per-paper`: Maximum repositories to store per paper (default: 1)
 					- `--verbose`: Enable verbose logging
-	- #### 4.3 Script Structure
-	- **Location**: `scripts/arxiv_paper_repo_search.py`
-	- **Pattern**: Follow existing script patterns (e.g., `import_pwc_paper_abstracts.py`)
-	- **Components**:
-	  
-	  1. Environment setup (load .env files)
-	  
-	  2. Database schema validation
-	  
-	  3. ArXiv API service initialization
-	  
-	  4. Code repository search service initialization
-	  
-	  5. Date range calculation
-	  
-	  6. Main processing loop:
-		- Fetch papers from arXiv
-		- For each paper:
-			- Check for duplicates
-			- Search for repositories (if enabled)
-			- Create/update paper in database
-		- Commit batches
-		  
-		  7. Statistics reporting
-	- ### 5. Error Handling and Resilience
+				- #### 4.3 Script Structure
+					- **Location**: `scripts/arxiv_paper_repo_search.py`
+					- **Pattern**: Follow existing script patterns (e.g., `import_pwc_paper_abstracts.py`)
+					- **Components**:
+					  
+					  1. Environment setup (load .env files)
+					  
+					  2. Database schema validation
+					  
+					  3. ArXiv API service initialization
+					  
+					  4. Code repository search service initialization
+					  
+					  5. Date range calculation
+					  
+					  6. Main processing loop:
+						- Fetch papers from arXiv
+						- For each paper:
+							- Check for duplicates
+							- Search for repositories (if enabled)
+							- Create/update paper in database
+						- Commit batches
+						  
+						  7. Statistics reporting
+		- ### 5. Error Handling and Resilience
 	- #### 5.1 ArXiv API Errors
 	- Handle rate limiting (429 errors)
 	- Implement exponential backoff retry
