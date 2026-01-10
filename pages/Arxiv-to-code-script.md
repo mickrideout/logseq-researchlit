@@ -174,14 +174,14 @@
 				  python scripts/arxiv_paper_repo_search.py --month 202401 --env dev
 				  
 				  ```
-	- #### 4.2 Optional Arguments
-	- `--env` (required): Environment (`dev` or `prod`)
-	- `--dry-run`: Preview what would be processed without database writes
-	- `--skip-repo-search`: Only fetch papers, skip repository search
-	- `--limit`: Limit number of papers to process (useful for testing)
-	- `--batch-size`: Number of papers to commit per batch (default: 50)
-	- `--max-repos-per-paper`: Maximum repositories to store per paper (default: 1)
-	- `--verbose`: Enable verbose logging
+				- #### 4.2 Other Argum!ents
+					- `--env` (required): Environment (`dev` or `prod`)
+					- `--dry-run`: Preview what would be processed without database writes
+					- `--skip-repo-search`: Only fetch papers, skip repository search
+					- `--limit`: Limit number of papers to process (useful for testing)
+					- `--batch-size`: Number of papers to commit per batch (default: 50)
+					- `--max-repos-per-paper`: Maximum repositories to store per paper (default: 1)
+					- `--verbose`: Enable verbose logging
 	- #### 4.3 Script Structure
 	- **Location**: `scripts/arxiv_paper_repo_search.py`
 	- **Pattern**: Follow existing script patterns (e.g., `import_pwc_paper_abstracts.py`)
