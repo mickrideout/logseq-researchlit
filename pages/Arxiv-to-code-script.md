@@ -255,20 +255,20 @@
 			- `GITHUB_API_TOKEN`: GitHub API token
 			- Database connection variables (POSTGRES_*)
 		- #### 7.2 Dependencies
-		- Existing dependencies (already in project):
-			- `aiohttp`: Async HTTP client
-			- `sqlalchemy`: Database ORM
-			- Existing service modules
-		- New dependencies (if needed):
-			- `feedparser` or `xml.etree.ElementTree`: For parsing arXiv Atom feed
-			- Or use `aiohttp` + manual XML parsing
+			- Existing dependencies (already in project):
+				- `aiohttp`: Async HTTP client
+				- `sqlalchemy`: Database ORM
+				- Existing service modules
+			- New dependencies (if needed):
+				- `feedparser` or `xml.etree.ElementTree`: For parsing arXiv Atom feed
+				- Or use `aiohttp` + manual XML parsing
 		- #### 7.3 Configuration Options
-		- ArXiv API base URL: `http://export.arxiv.org/api/query`
-		- Default max results per query: 2000 (arXiv API limit)
-		- Default rate limit: 3 requests per second (respect arXiv API limits)
-		- Default batch size: 50 papers
-		- Default timeout: 30 seconds per API call
-		- ### 8. Performance Considerations
+			- ArXiv API base URL: `http://export.arxiv.org/api/query`
+			- Default max results per query: 2000 (arXiv API limit)
+			- Default rate limit: 3 requests per second (respect arXiv API limits)
+			- Default batch size: 50 papers
+			- Default timeout: 30 seconds per API call
+	- ### 8. Performance Considerations
 		- #### 8.1 Async Processing
 		- Use async/await for:
 			- ArXiv API calls
