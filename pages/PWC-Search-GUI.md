@@ -1,2 +1,4 @@
 -
-- **Task** - To implement a
+- **Task** - GUI implementation to allow users to search for papers that have code repositories
+- ## Requirements
+	-
