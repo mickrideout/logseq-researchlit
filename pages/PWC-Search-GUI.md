@@ -2,9 +2,11 @@
 - **Task** - GUI implementation to allow users to search for papers that have code repositories
 - ## Requirements
 	- From the front page, have a box where user can enter a search for papers with code
+	- The search box text will be used to search the paper title
 	- Search results page will be paginated (default 20) with the following details per paper:
 		- title
 		- abstract
 		- code_repository
 		- github stars
+	- Have the search box immediated under the text 'Papers With Code meets Elicit' with the label 'Find papers with code:'
 	-
