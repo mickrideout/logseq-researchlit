@@ -9,4 +9,5 @@
 		- code_repository
 		- github stars
 	- Have the search box immediated under the text 'Papers With Code meets Elicit' with the label 'Find papers with code:'
-	-
+	- Ensure that the appropriate indices are on the fields / columns used by search
+	- Searching of the title will be performed on the papers.title column. Only return
