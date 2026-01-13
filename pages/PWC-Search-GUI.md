@@ -10,4 +10,5 @@
 		- github stars
 	- Have the search box immediated under the text 'Papers With Code meets Elicit' with the label 'Find papers with code:'
 	- Ensure that the appropriate indices are on the fields / columns used by search
-	- Searching of the title will be performed on the papers.title column. Only return
+	- Searching of the title will be performed on the papers.title column. Only return papers that have a code repository. i.e papers['attributes']['extractions']['code_repository_found'] == true
+	-
