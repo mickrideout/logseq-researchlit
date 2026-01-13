@@ -1,4 +1,5 @@
 -
 - **Task** - GUI implementation to allow users to search for papers that have code repositories
 - ## Requirements
+	- From the front page, have a box where user can enter a search for papers with code
 	-
