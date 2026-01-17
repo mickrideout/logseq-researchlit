@@ -1,3 +1,5 @@
 -
 - TODO fix github search
-- TODO
+- TODO do sota upload
+- TODO do sota interface
+-
