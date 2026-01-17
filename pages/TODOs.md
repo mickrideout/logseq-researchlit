@@ -2,7 +2,7 @@
 - TODO fix github search
 - TODO do sota upload
 - TODO do sota interface
-- TODO add sorting to search
+- DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
 -
