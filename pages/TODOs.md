@@ -3,5 +3,6 @@
 - TODO do sota upload
 - TODO do sota interface
 - TODO add sorting to search
-- TODO fix search to be keyword not phrase
+- DONE fix search to be keyword not phrase
+-
 -
