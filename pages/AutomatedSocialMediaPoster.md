@@ -2,4 +2,7 @@
 - **Task** - Build a system to find trending papers in AI and post summaries of them on social media
 - ## Requirements
 	- Run daily
-	-
+	- Find trending paper to post
+	- Summarise paper in researchlit
+	- Produce social media post
+	- Post on multiple platforms
