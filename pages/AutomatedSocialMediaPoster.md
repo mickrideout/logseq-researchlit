@@ -4,5 +4,6 @@
 	- Run daily
 	- Find trending paper to post
 	- Summarise paper in researchlit
-	- Produce social media post
+	- Produce social media post, manually verify quality
 	- Post on multiple platforms
+	- Use n8n instance
