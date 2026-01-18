@@ -1,2 +1,3 @@
 -
-- ****
+- **Task** - Build a system to find trending papers in AI and post summaries of them on social media
+-
