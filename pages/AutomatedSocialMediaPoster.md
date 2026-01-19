@@ -179,6 +179,7 @@
 				- [Twitter API v2 Reference](https://developer.twitter.com/en/docs/twitter-api)
 				- [Hugging Face Daily Papers](https://huggingface.co/papers)
 	- ### Chatgpt
+	  collapsed:: true
 		-
 		- Below is a curated **comparison of open-source projects and frameworks** that can help you automate a **research workflow: discover trending academic papers → summarize with LLMs → publish summaries on X (Twitter)**. Wherever possible I link directly to GitHub and indicate the tech stack, summarization components, and how posting to Twitter/X is handled (API vs RSS vs tools).
 		- ---
@@ -263,7 +264,6 @@
 			- ---
 			- If you want, I can also provide **starter code snippets** for a complete pipeline (discovery → summary → tweet loop) using specific stacks like LangChain or AutoGPT.
 	- ### Grok
-	  collapsed:: true
 		- ### Key Projects for Automating Academic Paper Summaries to X Posts
 		- **Research suggests** several open-source tools and frameworks can automate parts or all of the workflow, though full end-to-end solutions often require customization due to Twitter's paid API restrictions.
 		- **It seems likely that** agentic frameworks like EvoAgentX or CrewAI offer the most flexibility for building custom pipelines, while dedicated bots handle specific hurdles like browser automation for posting.
