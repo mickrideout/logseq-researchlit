@@ -23,6 +23,7 @@
 		- Include at least one "low-code" or agentic framework (like EvoAgentX or Dify) that has a template for this specific use case.
 	- **Output Format:** Present the results in a table for comparison, followed by a brief "Best for [Use Case]" summary for each.
 	- ### Gemini
+	  collapsed:: true
 		-
 		- ### 1. EvoAgentX (ArXiv Research Summarizer Workflow)
 			- This is a modern multi-agent framework that includes a pre-built "ArXiv Research Summarizer Workflow." It is designed to retrieve papers, summarize them, and can be extended to post to external APIs.
@@ -45,7 +46,6 @@
 				- **Link:** [GitHub - wangcongcong123/FeederBot](https://www.google.com/search?q=https://github.com/wangcongcong123/FeederBot)
 		-
 	- ### Claude
-	  collapsed:: true
 		-
 		- # ArXiv Paper to Twitter Automation: Project Comparison
 			- ## Complete Workflow Solutions
