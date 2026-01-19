@@ -1,2 +1,4 @@
 -
 - **Task** - to create an paper import script that scrapes the web pages of hugging face trending papers to get papers and links to their code implementation
+- ## Requirements
+	-
