@@ -266,6 +266,7 @@
 			- ---
 			- If you want, I can also provide **starter code snippets** for a complete pipeline (discovery → summary → tweet loop) using specific stacks like LangChain or AutoGPT.
 	- ### Grok
+	  collapsed:: true
 		- ### Key Projects for Automating Academic Paper Summaries to X Posts
 		- **Research suggests** several open-source tools and frameworks can automate parts or all of the workflow, though full end-to-end solutions often require customization due to Twitter's paid API restrictions.
 		- **It seems likely that** agentic frameworks like EvoAgentX or CrewAI offer the most flexibility for building custom pipelines, while dedicated bots handle specific hurdles like browser automation for posting.
