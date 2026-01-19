@@ -12,6 +12,7 @@
 	- Finds trending papers, summarises and posts - https://github.com/susumuota/arxiv-tweets-summary?tab=readme-ov-file
 	- framework for searching / ai / posting to X - https://github.com/ihuzaifashoukat/twitter-automation-ai
 	- Automate academic promotion - https://github.com/LightChen233/AutoPR
+	- Generates daily list of papers but get arxiv code links? - https://github.com/xuchen-li/llm-arxiv-daily
 - ## AI Suggestions
 	-
 	- **Role:** You are an expert Open-Source AI Architect and Research Engineer.
