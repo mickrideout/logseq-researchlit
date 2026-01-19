@@ -323,7 +323,6 @@
 		- [Best 50+ Open Source AI Agents Listed in 2026 - AIMultiple research](https://research.aimultiple.com/open-source-ai-agents)
 		- [Best 5 Frameworks To Build Multi-Agent AI Applications - GetStream.io](https://getstream.io/blog/multiagent-ai-frameworks)
 	- ### Perplexity
-	  collapsed:: true
 		-
 		- The ecosystem is close but still fragmented: there are good open‑source pieces for discovery and summarization, and several Twitter/X bots for arXiv, but almost no “one‑shot” repo that cleanly does discovery → PDF/LaTeX parse → LLM summary → X thread end‑to‑end. The table below focuses on projects that get you most of the way there and are realistically adaptable.
 		- ## Notable projects and frameworks
