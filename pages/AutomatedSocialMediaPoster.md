@@ -10,6 +10,7 @@
 - ## Links
 	- Rohan Paul AI generated paper summaries  and newsletter - https://x.com/rohanpaul_ai
 	- Finds trending papers, summarises and posts - https://github.com/susumuota/arxiv-tweets-summary?tab=readme-ov-file
+	- framework for searching / ai / posting to X - https://github.com/ihuzaifashoukat/twitter-automation-ai
 - ## AI Suggestions
 	-
 	- **Role:** You are an expert Open-Source AI Architect and Research Engineer.
