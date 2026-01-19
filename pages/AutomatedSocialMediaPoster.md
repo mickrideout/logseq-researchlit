@@ -46,6 +46,7 @@
 				- **Link:** [GitHub - wangcongcong123/FeederBot](https://www.google.com/search?q=https://github.com/wangcongcong123/FeederBot)
 		-
 	- ### Claude
+	  collapsed:: true
 		-
 		- # ArXiv Paper to Twitter Automation: Project Comparison
 			- ## Complete Workflow Solutions
@@ -177,7 +178,6 @@
 				- [Twitter API v2 Reference](https://developer.twitter.com/en/docs/twitter-api)
 				- [Hugging Face Daily Papers](https://huggingface.co/papers)
 	- ### Chatgpt
-	  collapsed:: true
 		-
 		- Below is a curated **comparison of open-source projects and frameworks** that can help you automate a **research workflow: discover trending academic papers → summarize with LLMs → publish summaries on X (Twitter)**. Wherever possible I link directly to GitHub and indicate the tech stack, summarization components, and how posting to Twitter/X is handled (API vs RSS vs tools).
 		- ---
