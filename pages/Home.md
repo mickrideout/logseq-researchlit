@@ -7,7 +7,7 @@
 	- [[PWC-Code-Linking]]
 	- [[Arxiv-to-code-script]]
 	- [[PWC-Search-GUI]]
-	- [[HuggingFaceScrapper]]
+	- [[HuggingFaceImporter]]
 	- [[TrendingPapers]]
 	- [[AutomatedSocialMediaPoster]]
 -

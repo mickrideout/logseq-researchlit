@@ -1,5 +1,5 @@
 -
-- **Task** - to create an paper import script that scrapes the web pages of hugging face trending papers to get papers and links to their code implementation
+- **Task** - To import
 - ## Requirements
 	- Creates a new scripts - scripts/hugging-face-import.py
 	- Structure it similarly to scripts/arxiv_paper_repo_search.py
