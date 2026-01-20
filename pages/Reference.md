@@ -1,3 +1,3 @@
 -
 - ## Agents
-	-
+	- How to write good agent specs - https://addyosmani.com/blog/good-spec
