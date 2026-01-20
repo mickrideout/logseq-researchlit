@@ -6,5 +6,6 @@
 		- --env (dev/prod)
 		- --import-dir <dir-to-process>
 	- For every json file in the import-dir with a name like '2024-11-10.json' do the following:
-		-
--
+		- Read the json file (a sample of the file is in the secion 'Example data')
+- ## Example Data
+	-
