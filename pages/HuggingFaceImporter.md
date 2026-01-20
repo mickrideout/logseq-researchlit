@@ -1,10 +1,9 @@
 -
-- **Task** - To import
+- **Task** - To import papers from hugging face into researchlit
 - ## Requirements
-	- Creates a new scripts - scripts/hugging-face-import.py
-	- Structure it similarly to scripts/arxiv_paper_repo_search.py
+	- Creat a new scripts - scripts/hugging-face-import.py
 	- Command line parameters are:
 		- --env (dev/prod)
-		- --import-period (week/month)
-		- --import-time <str>
+		- --import-dir <dir-to-process>
+	-
 -
