@@ -9,7 +9,15 @@
 		- Read the json file (a sample of the file is in the section 'Example data')
 		- For each paper in the 'papers' attribute:
 			- if there is a 'pdf-file-location' submit the pdf for importing via the researchlit api
-			- after the pdf file has been processed, update the
+			- after the pdf file has been processed, update the papers.attributes and overwrite this section:
+				- ```
+				  {
+				      "extractions": {
+				          "code_repository_found": true,
+				          "code_repository": "<>",
+				      }
+				  }
+				  ```
 - ## Example Data
 	- ```json
 	  {
