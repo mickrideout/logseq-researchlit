@@ -14,7 +14,7 @@
 				  {
 				      "extractions": {
 				          "code_repository_found": true,
-				          "code_repository": "<>",
+				          "code_repository": "<insert the >",
 				      }
 				  }
 				  ```
