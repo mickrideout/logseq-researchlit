@@ -7,7 +7,9 @@
 		- --import-dir <dir-to-process>
 	- For every json file in the import-dir with a name like '2024-11-10.json' do the following:
 		- Read the json file (a sample of the file is in the section 'Example data')
-		- For each paper
+		- For each paper in the 'papers' attribute:
+			- if there is a 'pdf-file-location' submit the pdf for importing via the researchlit api
+			- after the pdf file has been processed, update the
 - ## Example Data
 	- ```json
 	  {
