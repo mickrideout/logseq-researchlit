@@ -10,6 +10,7 @@
 		- For each paper in the 'papers' attribute:
 			- skip the paper if 'github_repo' attribute doesnt exist
 			- if there is a 'pdf-file-location' submit the pdf for importing via the researchlit api
+			- if the "pdf_url" key has a value like "https://arxiv.org/pdf/2312.02120.pdf", the arxiv_id is 2312.02120
 			- after the pdf file has been processed, update the papers.attributes and overwrite this section:
 				- ```
 				  {
@@ -22,35 +23,43 @@
 - ## Example Data
 	- ```json
 	  {
-	    "date": "2023-05-04",
+	    "date": "2023-12-05",
 	    "papers": [
 	      {
-	        "title": "Personalize Segment Anything Model with One Shot",
-	        "url": "https://huggingface.co/papers/2305.03048",
-	        "authors": [
-	          "Ziyu Guo",
-	          "Shilin Yan",
-	          "Junting Pan",
-	          "Hao Dong",
-	          "Peng Gao"
-	        ],
-	        "pdf_url": "https://arxiv.org/pdf/2305.03048.pdf",
+	        "title": "Magicoder: Source Code Is All You Need",
+	        "url": "https://huggingface.co/papers/2312.02120",
+	        "authors": [],
+	        "pdf_url": "https://arxiv.org/pdf/2312.02120.pdf",
 	        "abstract": "",
-	        "upvotes": 9,
-	        "pdf-file-location": "papers/2023-05-04/Personalize_Segment_Anything_Model_with.pdf"
+	        "upvotes": 82,
+	        "github_repo": "https://github.com/ise-uiuc/magicoder",
+	        "pdf-file-location": "papers/2023-12-05/Magicoder_Source_Code_Is_All.pdf"
 	      },
 	      {
-	        "title": "ChatGPT-steered Editing Instructor for Customization of Abstractive\n  Summarization",
-	        "url": "https://huggingface.co/papers/2305.02483",
+	        "title": "VMC: Video Motion Customization using Temporal Attention Adaption for\n  Text-to-Video Diffusion Models",
+	        "url": "https://huggingface.co/papers/2312.00845",
 	        "authors": [
-	          "Wen Xiao",
-	          "Yujia Xie",
-	          "Giuseppe Carenini"
+	          "Jong Chul Ye"
 	        ],
-	        "pdf_url": "https://arxiv.org/pdf/2305.02483.pdf",
+	        "pdf_url": "https://arxiv.org/pdf/2312.00845.pdf",
 	        "abstract": "",
-	        "upvotes": 3,
-	        "pdf-file-location": "papers/2023-05-04/ChatGPT-steered_Editing_Instructor_for_Customization.pdf"
+	        "upvotes": 39,
+	        "github_repo": "https://github.com/HyeonHo99/Video-Motion-Customization",
+	        "pdf-file-location": "papers/2023-12-05/VMC_Video_Motion_Customization_using.pdf"
+	      },
+	      {
+	        "title": "FaceStudio: Put Your Face Everywhere in Seconds",
+	        "url": "https://huggingface.co/papers/2312.02663",
+	        "authors": [
+	          "Yuxuan Yan",
+	          "Pei Cheng",
+	          "Bin Fu"
+	        ],
+	        "pdf_url": "https://arxiv.org/pdf/2312.02663.pdf",
+	        "abstract": "",
+	        "upvotes": 32,
+	        "github_repo": "https://github.com/xyynafc/FaceStudio",
+	        "pdf-file-location": "papers/2023-12-05/FaceStudio_Put_Your_Face_Everywhere.pdf"
 	      },
 	    ]
 	  }
