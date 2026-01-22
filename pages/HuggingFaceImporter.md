@@ -20,6 +20,7 @@
 				      }
 				  }
 				  ```
+		- Once all the papers for a date have been processed, remove the json file and the papers/<YYYY-MM-DD>
 - ## Example Data
 	- ```json
 	  {
