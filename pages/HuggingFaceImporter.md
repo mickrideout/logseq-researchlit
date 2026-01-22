@@ -8,7 +8,7 @@
 	- For every json file in the import-dir with a name like '2024-11-10.json' do the following:
 		- Read the json file (a sample of the file is in the section 'Example data')
 		- For each paper in the 'papers' attribute:
-			- slip the paper if 'github_repo' attribute doesnt exist
+			- skip the paper if 'github_repo' attribute doesnt exist
 			- if there is a 'pdf-file-location' submit the pdf for importing via the researchlit api
 			- after the pdf file has been processed, update the papers.attributes and overwrite this section:
 				- ```
