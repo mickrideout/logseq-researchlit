@@ -4,6 +4,7 @@
 - TODO do sota interface
 - TODO create automated social media posting system
 - TODO Integrate HF scraping pipeline
+- TODO create public api
 - DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
