@@ -10,7 +10,7 @@
 		- For each paper in the 'papers' attribute:
 			- skip the paper if 'github_repo' attribute doesnt exist
 			- if there is a 'pdf-file-location' submit the pdf for importing via the researchlit api
-			- if the "pdf_url" key has a value like "https://arxiv.org/pdf/2312.02120.pdf", the arxiv_id is 2312.02120
+			- if the "pdf_url" key has a value like "https://arxiv.org/pdf/2312.02120.pdf", the arxiv_id is 2312.02120 extract this id from the value and update the papers.arxiv_id column
 			- after the pdf file has been processed, update the papers.attributes and overwrite this section:
 				- ```
 				  {
