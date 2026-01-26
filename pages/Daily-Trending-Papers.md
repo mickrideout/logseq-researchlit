@@ -2,5 +2,5 @@
 - **Task** - To display top 10 trending papers on the front page of researchlit.com
 - ## Requirements
 	- Query the database for the top 10 trending papers
-		-
+		- Find the most recent date for papers by querying for the max date in the papers['']
 	- Create a new scrollable box on the home page of researchlit.com. Th
