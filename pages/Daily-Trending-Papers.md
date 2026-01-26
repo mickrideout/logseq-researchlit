@@ -4,5 +4,7 @@
 	- Query the database for the top 10 trending papers
 		- Find the most recent date for papers by querying for the max date in the papers['attributes']['hugging_face']['date']
 		- The find the top ten papers where papers['attributes']['hugging_face']['date'] = most recent date found, order by papers['attributes']['hugging_face']['up_votes'] descending
-		-
-	- Create a new scrollable box on the home page of researchlit.com. Th
+		- the top ten papers should be cached and only refreshed every 4 hours
+	- Create a new scrollable box on the home page of researchlit.com.
+	- The title of the box should be 'Top Trending Papers for <MMM DD>'
+	- List the ten papers in the scroll box with the title being a link to the paper's details page
