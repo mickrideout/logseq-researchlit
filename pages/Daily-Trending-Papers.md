@@ -1,4 +1,6 @@
 -
 - **Task** - To display top 10 trending papers on the front page of researchlit.com
 - ## Requirements
-	- Create a new scrollable box on the home page of researchlit.com.
+	- Query the database for the top 10 trending papers
+		-
+	- Create a new scrollable box on the home page of researchlit.com. Th
