@@ -10,6 +10,7 @@
 	- [[HuggingFaceImporter]]
 	- [[TrendingPapers]]
 	- [[AutomatedSocialMediaPoster]]
+	- [[Daily-Trending-Papers]]
 -
 -
 -
