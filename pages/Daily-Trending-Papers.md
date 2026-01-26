@@ -2,5 +2,7 @@
 - **Task** - To display top 10 trending papers on the front page of researchlit.com
 - ## Requirements
 	- Query the database for the top 10 trending papers
-		- Find the most recent date for papers by querying for the max date in the papers['']
+		- Find the most recent date for papers by querying for the max date in the papers['attributes']['hugging_face']['date']
+		- The find the top ten papers where papers['attributes']['hugging_face']['date'] = most recent date found, order by papers['attributes']['hugging_face']['up_votes'] descending
+		-
 	- Create a new scrollable box on the home page of researchlit.com. Th
