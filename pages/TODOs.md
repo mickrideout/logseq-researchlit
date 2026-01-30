@@ -5,6 +5,7 @@
 - TODO create automated social media posting system
 - TODO Integrate HF scraping pipeline
 - TODO create public api
+- TODO  add github stars to hf import
 - DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
