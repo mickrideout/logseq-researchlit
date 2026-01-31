@@ -6,6 +6,8 @@
 - TODO Integrate HF scraping pipeline
 - TODO create public api
 - TODO  add github stars to hf import
+- TODO add pdf upload from arxiv url
+- TODO upload to zotero, via pdf or arxiv url
 - DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
