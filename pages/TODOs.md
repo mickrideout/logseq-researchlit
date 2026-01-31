@@ -8,6 +8,7 @@
 - TODO  add github stars to hf import
 - TODO add pdf upload from arxiv url
 - TODO upload to zotero, via pdf or arxiv url
+- TODO  add arxiv id post to twitter option, paper id post to twitter
 - DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
