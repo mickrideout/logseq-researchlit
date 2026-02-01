@@ -10,6 +10,7 @@
 - TODO upload to zotero, via pdf or arxiv url
 - TODO  add arxiv id post to twitter option, paper id post to twitter
 - TODO Tool to find trending papers on twitter and draft a reply
+- TODO latest twitter posts on front page
 - DONE add sorting to search
 - DONE fix search to be keyword not phrase
 -
