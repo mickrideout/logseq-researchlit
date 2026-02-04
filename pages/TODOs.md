@@ -3,7 +3,6 @@
 - TODO do sota upload
 - TODO do sota interface
 - TODO create public api
-- TODO  add github stars to hf import
 - TODO add pdf upload from arxiv url
 - TODO upload to zotero, via pdf or arxiv url
 - TODO Tool to find trending papers on twitter and draft a reply
