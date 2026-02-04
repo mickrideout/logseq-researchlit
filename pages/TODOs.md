@@ -8,5 +8,6 @@
 - TODO upload to zotero, via pdf or arxiv url
 - TODO Tool to find trending papers on twitter and draft a reply
 - TODO Read all summaries page
+- TODO  add langextract
 -
 -
