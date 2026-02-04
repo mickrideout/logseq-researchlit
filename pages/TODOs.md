@@ -2,16 +2,11 @@
 - TODO fix github search
 - TODO do sota upload
 - TODO do sota interface
-- TODO create automated social media posting system
-- TODO Integrate HF scraping pipeline
 - TODO create public api
 - TODO  add github stars to hf import
 - TODO add pdf upload from arxiv url
 - TODO upload to zotero, via pdf or arxiv url
-- TODO  add arxiv id post to twitter option, paper id post to twitter
 - TODO Tool to find trending papers on twitter and draft a reply
-- TODO latest twitter posts on front page
-- DONE add sorting to search
-- DONE fix search to be keyword not phrase
+- TODO Read all summaries page
 -
 -
