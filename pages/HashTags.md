@@ -1,0 +1,6 @@
+-
+- Removed hashtags in the twitter posts... original prompt:
+	- End with a concluding "So What?" paragraph and hashtags.
+	- Critical Constraint: Ensure no bolded "titles" or "headers" appear at the start of paragraphs. Start every paragraph directly with the content.
+	- Add 3 relevant academic/niche hashtags.
+	-
