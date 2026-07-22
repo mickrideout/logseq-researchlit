@@ -12,6 +12,8 @@
 	- [[TrendingPapers]]
 	- [[AutomatedSocialMediaPoster]]
 	- [[Daily-Trending-Papers]]
+	- [[AutomatedPaperReviewer]]
+	-
 -
 -
 -
